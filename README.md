@@ -1,7 +1,9 @@
-<img width="615" height="626" alt="Screenshot 2026-02-14 142527" src="https://github.com/user-attachments/assets/2aaeb708-280e-4e25-b143-e11527235b0c" /># Plant-Species-Image-Classification
+# Plant-Species-Image-Classification
+
 Step 4:
 <img width="1331" height="624" alt="Screenshot 2026-02-14 151016" src="https://github.com/user-attachments/assets/e1cebf4b-04c4-4711-a9d1-7935289fe566" />
 I chose the training values (epochs, batch size, and learning rate) based on achieving a balance between accuracy, training time, and model stability.
+
 Step 5:
 
 Step 6:
