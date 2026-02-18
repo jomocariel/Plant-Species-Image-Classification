@@ -6,6 +6,8 @@ I chose the training values (epochs, batch size, and learning rate) based on ach
 
 Step 5:
 
+![4b8e4a5c-0ffd-4191-9d9f-d1bd5f6ed437 (1)](https://github.com/user-attachments/assets/5c7bed6f-d79b-439e-89c8-6e571e4b69ef)
+
 Step 6:
  10 screenshots showing: 
 ○ Input image 
@@ -57,3 +59,4 @@ A reduced learning rate makes the training slower but more precise. If the learn
 
 https://drive.google.com/file/d/1sWOI2jgdABgQnBQsE2P-sq0WIeBYgfDM/view?usp=drive_link
 https://docs.google.com/spreadsheets/d/12T8bL8PXUJrgRlMW2doi9uiwOk98yH4tv2CZe0qb93g/edit?usp=drive_link
+https://drive.google.com/drive/folders/1HNZBT6ZcQew-YIAwfMTWImTlxajKqxHN?usp=sharing
