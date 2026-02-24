@@ -256,7 +256,8 @@ Test 10:
 
 # Reflection Questions:
 
-Step 10:
+Answer the following questions based on your experience: 
+
 1. How did the number of images per class affect your model’s accuracy?
    -The amount of photos per class significantly influenced the model's performance. I discovered that plant species with more photos were predicted more accurately since the model had more data to work with. When a class contained fewer photos, the model became confused and generated more errors. I also discovered that having a balanced number of photos per class allowed the model to perform more fairly. When one class had more photos than the others, the model favored that class during prediction.
 2. Which plant species were most commonly misclassified and why?
