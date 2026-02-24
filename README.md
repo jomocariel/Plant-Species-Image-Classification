@@ -1,6 +1,7 @@
 # Plant-Species-Image-Classification
 
 A. Project Overview
+
 The purpose of this study is to develop an image classification model capable of identifying 20 different species of ornamental and tropical plants. We collected over 5,000 plant photographs using Google Teachable Machine and trained a model to discriminate between species based on visual features such as bloom appearance, leaf shape, and color.
 
 B. Plant Species Section 
