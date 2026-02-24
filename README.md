@@ -1,4 +1,4 @@
-[model_accuracy.html](https://github.com/user-attachments/files/25508878/model_accuracy.html)# Plant-Species-Image-Classification\
+# Plant-Species-Image-Classification
 
 A. Project Overview
 The purpose of this study is to develop an image classification model capable of identifying 20 different species of ornamental and tropical plants. We collected over 5,000 plant photographs using Google Teachable Machine and trained a model to discriminate between species based on visual features such as bloom appearance, leaf shape, and color.
@@ -182,458 +182,76 @@ Accuracy per class
 
 <img width="1346" height="640" alt="accuracy perclass" src="https://github.com/user-attachments/assets/ac8e80d6-5379-4484-9461-d7de2f94bce6" />
 
+Overall model accuracy 
 
+| # | Class | Accuracy | # Samples |
+|---|-------|----------|-----------|
+| 1 | Eleusine Indica | 1.00 | 39 |
+| 2 | Jatropha Curcas | 1.00 | 43 |
+| 3 | Plectranthus Scutellarioides | 1.00 | 41 |
+| 4 | Red Mayana (Coleus) | 1.00 | 41 |
+| 5 | Chamaecostus Cuspidatus | 1.00 | 37 |
+| 6 | Talinum Paniculatum | 1.00 | 41 |
+| 7 | Pseudelephantopus Spicatus | 1.00 | 41 |
+| 8 | Curcuma Longa | 1.00 | 38 |
+| 9 | Capsicum Genus | 1.00 | 41 |
+| 10 | Ipomoea Aquatica | 1.00 | 41 |
+| 11 | Corchorus | 1.00 | 41 |
+| 12 | Euphorbia Neriifolia | 1.00 | 44 |
+| 13 | Kalanchoe | 1.00 | 42 |
+| 14 | Alternanthera Sessilis | 1.00 | 41 |
+| 15 | Tsaang Gubat | 1.00 | 42 |
+| 16 | Sphagneticola Trilobata | 1.00 | 41 |
+| 17 | Cyanthillium Cinereum | 1.00 | 42 |
+| 18 | Portulaca Oleracea | 1.00 | 41 |
+| 19 | Stone Breaker | 1.00 | 41 |
+| 20 | Ipomoea Batatas | 1.00 | 39 |
+| **TOTAL** | | **1.00** | **826** |
 
+Model Testing 
 
-[Uploading<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Model Accuracy Per Class</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap');
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'Lato', sans-serif;
-      background: linear-gradient(135deg, #f5f0e8 0%, #e8f0e8 50%, #f0e8f5 100%);
-      min-height: 100vh;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      padding: 2.5rem 1rem;
-    }
-
-    .container {
-      max-width: 820px;
-      width: 100%;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    .header .label {
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 0.4rem;
-    }
-    .header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      color: #2c4a2e;
-      margin-bottom: 0.3rem;
-    }
-    .divider {
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, #4a7c59, #8b4f8b);
-      margin: 0.8rem auto 0;
-      border-radius: 2px;
-    }
-
-    /* Summary Cards */
-    .summary-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-bottom: 1.8rem;
-    }
-    .summary-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.2rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    }
-    .summary-card .s-label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #aaa;
-      margin-bottom: 0.4rem;
-    }
-    .summary-card .s-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 700;
-    }
-    .summary-card .s-sub {
-      font-size: 0.72rem;
-      color: #aaa;
-      margin-top: 0.2rem;
-    }
-
-    /* Table */
-    .table-wrapper {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    thead tr {
-      background: linear-gradient(135deg, #2c4a2e, #3d6b40);
-    }
-    thead th {
-      padding: 1rem 1.4rem;
-      text-align: left;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.85);
-    }
-    thead th:nth-child(2),
-    thead th:nth-child(3),
-    thead th:nth-child(4) {
-      text-align: center;
-    }
-
-    tbody tr {
-      border-bottom: 1px solid #f0f0f0;
-      transition: background 0.15s ease;
-    }
-    tbody tr:last-child { border-bottom: none; }
-    tbody tr:hover { background: #f7fbf7; }
-
-    tbody td {
-      padding: 0.85rem 1.4rem;
-      vertical-align: middle;
-      font-size: 0.88rem;
-    }
-
-    /* No. column */
-    .td-no {
-      color: #bbb;
-      font-weight: 700;
-      font-size: 0.75rem;
-      width: 48px;
-    }
-
-    /* Class name */
-    .td-class {
-      font-weight: 700;
-      color: #2c3e2d;
-    }
-    .td-class span {
-      display: block;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 0.75rem;
-      color: #aaa;
-      margin-top: 1px;
-    }
-
-    /* Accuracy */
-    .td-acc {
-      text-align: center;
-    }
-    .acc-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #27ae60, #1e8449);
-      color: white;
-      font-weight: 700;
-      font-size: 0.82rem;
-      padding: 0.28rem 0.85rem;
-      border-radius: 20px;
-      letter-spacing: 0.04em;
-    }
-
-    /* Bar column */
-    .td-bar { width: 180px; }
-    .bar-track {
-      background: #eee;
-      border-radius: 6px;
-      height: 8px;
-      overflow: hidden;
-    }
-    .bar-fill {
-      height: 100%;
-      border-radius: 6px;
-      background: linear-gradient(90deg, #4a7c59, #27ae60);
-    }
-
-    /* Samples */
-    .td-samples {
-      text-align: center;
-      font-weight: 700;
-      color: #555;
-    }
-
-    /* Footer */
-    .table-footer {
-      background: #f9fbf9;
-      border-top: 2px solid #e0ece0;
-    }
-    .table-footer td {
-      padding: 1rem 1.4rem;
-      font-weight: 700;
-      font-size: 0.88rem;
-      color: #2c4a2e;
-    }
-    .table-footer .td-acc { text-align: center; }
-    .table-footer .td-samples { text-align: center; font-size: 1rem; }
-
-    .footer-note {
-      text-align: center;
-      margin-top: 1.2rem;
-      font-size: 0.76rem;
-      color: #aaa;
-      letter-spacing: 0.04em;
-    }
-  </style>
-</head>
-<body>
-<div class="container">
-
-  <!-- Header -->
-  <div class="header">
-    <p class="label">Teachable Machine — Classification Results</p>
-    <h2>Accuracy Per Class</h2>
-    <div class="divider"></div>
-  </div>
-
-  <!-- Summary Cards -->
-  <div class="summary-row">
-    <div class="summary-card">
-      <div class="s-label">Overall Accuracy</div>
-      <div class="s-value" style="color:#27ae60;">100%</div>
-      <div class="s-sub">All 20 classes</div>
-    </div>
-    <div class="summary-card">
-      <div class="s-label">Total Classes</div>
-      <div class="s-value" style="color:#3d6b40;">20</div>
-      <div class="s-sub">Plant species</div>
-    </div>
-    <div class="summary-card">
-      <div class="s-label">Total Samples</div>
-      <div class="s-value" style="color:#5c6bc0;">826</div>
-      <div class="s-sub">Test images</div>
-    </div>
-  </div>
-
-  <!-- Table -->
-  <div class="table-wrapper">
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th style="text-align:left;">Class</th>
-          <th>Accuracy</th>
-          <th style="text-align:left; padding-left:1.4rem;">Accuracy Bar</th>
-          <th># Samples</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr>
-          <td class="td-no">01</td>
-          <td class="td-class">Eleusine Indica <span>Goose Grass</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">39</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">02</td>
-          <td class="td-class">Jatropha Curcas <span>Physic Nut</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">43</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">03</td>
-          <td class="td-class">Plectranthus Scutellarioides <span>Painted Nettle / Coleus</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">04</td>
-          <td class="td-class">Red Mayana (Coleus) <span>Red Coleus</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">05</td>
-          <td class="td-class">Chamaecostus Cuspidatus <span>Insulin Plant</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">37</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">06</td>
-          <td class="td-class">Talinum Paniculatum <span>Jewels of Opar</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">07</td>
-          <td class="td-class">Pseudelephantopus Spicatus <span>Spiked False Elephant's Foot</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">08</td>
-          <td class="td-class">Curcuma Longa <span>Turmeric</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">38</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">09</td>
-          <td class="td-class">Capsicum Genus <span>Chili Pepper</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">10</td>
-          <td class="td-class">Ipomoea Aquatica <span>Water Spinach / Kangkong</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">11</td>
-          <td class="td-class">Corchorus <span>Jute / Saluyot</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">12</td>
-          <td class="td-class">Euphorbia Neriifolia <span>Indian Spurge Tree</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">44</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">13</td>
-          <td class="td-class">Kalanchoe <span>Miracle Leaf / Katakataka</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">42</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">14</td>
-          <td class="td-class">Alternanthera Sessilis <span>Sessile Joyweed</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">15</td>
-          <td class="td-class">Tsaang Gubat <span>Wild Tea</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">42</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">16</td>
-          <td class="td-class">Sphagneticola Trilobata <span>Wedelia / Singapore Daisy</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">17</td>
-          <td class="td-class">Cyanthillium Cinereum <span>Little Ironweed</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">42</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">18</td>
-          <td class="td-class">Portulaca Oleracea <span>Common Purslane / Alusiman</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">19</td>
-          <td class="td-class">Stone Breaker <span>Phyllanthus niruri</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">41</td>
-        </tr>
-
-        <tr>
-          <td class="td-no">20</td>
-          <td class="td-class">Ipomoea Batatas <span>Sweet Potato / Kamote</span></td>
-          <td class="td-acc"><span class="acc-badge">1.00</span></td>
-          <td class="td-bar"><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div></td>
-          <td class="td-samples">39</td>
-        </tr>
-
-      </tbody>
-
-      <!-- Footer total row -->
-      <tfoot>
-        <tr class="table-footer">
-          <td colspan="2" style="color:#2c4a2e; font-size:0.9rem; letter-spacing:0.05em;">OVERALL / TOTAL</td>
-          <td class="td-acc">
-            <span style="background:linear-gradient(135deg,#1e8449,#145a32);color:white;font-weight:700;font-size:0.85rem;padding:0.3rem 0.9rem;border-radius:20px;display:inline-block;">1.00</span>
-          </td>
-          <td style="padding-left:1.4rem; color:#888; font-size:0.8rem; font-weight:400;">Perfect classification across all classes</td>
-          <td class="td-samples" style="font-size:1rem; color:#2c4a2e;">826</td>
-        </tr>
-      </tfoot>
-    </table>
-  </div>
-
-  <p class="footer-note">Source: Teachable Machine — Accuracy Per Class Report &nbsp;|&nbsp; All 20 plant species achieved 100% classification accuracy</p>
-</div>
-</body>
-</html>
- model_accuracy.html…]()
+Test 1:
 
 1<img width="918" height="608" alt="Screenshot 2026-02-14 125121" src="https://github.com/user-attachments/assets/861edeb7-f550-48f2-9b46-0bebd5216220" />
+
+Test 2:
+
 2<img width="920" height="600" alt="Screenshot 2026-02-14 124245" src="https://github.com/user-attachments/assets/95b24594-8b00-453e-a1b4-f4731917f4de" />
-3<img width="921" height="607" alt="Screenshot 2026-02-14 130027" src="https://github.com/user-attachments/assets/2e591369-139a-4e34-88b5-46b81190e442" />4
+
+Test 3:
+
+3<img width="921" height="607" alt="Screenshot 2026-02-14 130027" src="https://github.com/user-attachments/assets/2e591369-139a-4e34-88b5-46b81190e442" />
+
+Test 4:
+
 4<img width="930" height="609" alt="Screenshot 2026-02-14 130236" src="https://github.com/user-attachments/assets/ca6d0a02-3e59-4558-a381-18c637dcf5da" />
+
+Test 5: 
+
 5<img width="913" height="606" alt="Screenshot 2026-02-14 131107" src="https://github.com/user-attachments/assets/ae87ad64-79b7-4f84-af33-1f7a7fdf860f" />
+
+Test 6:
+
 6<img width="921" height="613" alt="Screenshot 2026-02-14 131333" src="https://github.com/user-attachments/assets/a4b74633-dbe5-48cd-9aa0-feca091e8b9b" />
-7<img width="911" height="597" alt="Screenshot 2026-02-14 131453" src="https://github.com/user-attachments/assets/3313b894-1ec8-4ae0-868f-987212181e31" />
+
+Test 7:
+
+7<img width="911" height="597" alt="Screenshot 2026-02-14 131453" src="https://github.com/user-attachments/assets/3313b894-1ec8-4ae0-868f-987212181e31" />\
+
+Test 8: 
+
 8<img width="615" height="623" alt="Screenshot 2026-02-14 131956" src="https://github.com/user-attachments/assets/53aa4db5-5558-4493-a3dc-418fe6881675" />
+
+Test 9:
+
 9<img width="615" height="626" alt="Screenshot 2026-02-14 142527" src="https://github.com/user-attachments/assets/6bd2913e-c2e9-463b-8c49-f6a5bbf0bdd2" />
+
+Test 10:
+
 10<img width="813" height="614" alt="Screenshot 2026-02-14 140754" src="https://github.com/user-attachments/assets/222f0952-463c-4407-b171-47011357553d" />
 
 
-
+Reflection Questions:
 
 Step 10:
 1. How did the number of images per class affect your model’s accuracy?
