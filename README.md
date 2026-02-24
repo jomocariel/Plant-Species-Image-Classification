@@ -167,6 +167,7 @@ Scientific Name: Ipomoea batatas (L.) Lam.
 Description: A major root crop native to tropical America, now cultivated worldwide as a food staple and one of the most important crops in the Philippines. It produces long, trailing vines with heart-shaped to lobed leaves and funnel-shaped purple or white flowers. The starchy, sweet tuberous roots range in flesh color from white to deep orange or purple. Both roots and young leaves are highly nutritious and edible. Orange-fleshed varieties are rich in beta-carotene. Also used in folk medicine for managing blood sugar and as an antioxidant source.
 
 C. Model Training Details 
+
 | Parameter                  | Value |
 | -------------------------- | ----- |
 | Number of Epochs           | 100   |
@@ -175,15 +176,16 @@ C. Model Training Details
 | Number of Images per Class | 250   |
 
 D. Model Evaluation
-Confusion matrix 
+
+CONFUSION MATRIX
 
 <img width="1329" height="642" alt="Confusion Matrix" src="https://github.com/user-attachments/assets/23811145-6fab-4936-805a-9b0535a18ea1" />
 
-Accuracy per class 
+ACCURACY PER CLASS
 
 <img width="1346" height="640" alt="accuracy perclass" src="https://github.com/user-attachments/assets/ac8e80d6-5379-4484-9461-d7de2f94bce6" />
 
-Overall model accuracy 
+OVERALL MODEL ACCURACY
 
 | # | Class | Accuracy | # Samples |
 |---|-------|----------|-----------|
