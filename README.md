@@ -1,10 +1,10 @@
 # Plant-Species-Image-Classification
 
-A. Project Overview
+# A. Project Overview
 
 The purpose of this study is to develop an image classification model capable of identifying 20 different species of ornamental and tropical plants. We collected over 5,000 plant photographs using Google Teachable Machine and trained a model to discriminate between species based on visual features such as bloom appearance, leaf shape, and color.
 
-B. Plant Species Section 
+# B. Plant Species Section 
 
 1.ELEUSINE INDICA
 
@@ -166,7 +166,7 @@ Common Name: Sweet Potato / Kamote / Kamote-cue
 Scientific Name: Ipomoea batatas (L.) Lam.
 Description: A major root crop native to tropical America, now cultivated worldwide as a food staple and one of the most important crops in the Philippines. It produces long, trailing vines with heart-shaped to lobed leaves and funnel-shaped purple or white flowers. The starchy, sweet tuberous roots range in flesh color from white to deep orange or purple. Both roots and young leaves are highly nutritious and edible. Orange-fleshed varieties are rich in beta-carotene. Also used in folk medicine for managing blood sugar and as an antioxidant source.
 
-C. Model Training Details 
+# C. Model Training Details 
 
 | Parameter                  | Value |
 | -------------------------- | ----- |
@@ -175,7 +175,7 @@ C. Model Training Details
 | Learning Rate              | 0.001 |
 | Number of Images per Class | 250   |
 
-D. Model Evaluation
+# D. Model Evaluation
 
 CONFUSION MATRIX
 
@@ -211,7 +211,7 @@ OVERALL MODEL ACCURACY
 | 20 | Ipomoea Batatas | 1.00 | 39 |
 | **TOTAL** | | **1.00** | **826** |
 
-Model Testing 
+# E. Model Testing 
 
 Test 1:
 
@@ -254,7 +254,7 @@ Test 10:
 10<img width="813" height="614" alt="Screenshot 2026-02-14 140754" src="https://github.com/user-attachments/assets/222f0952-463c-4407-b171-47011357553d" />
 
 
-Reflection Questions:
+# Reflection Questions:
 
 Step 10:
 1. How did the number of images per class affect your model’s accuracy?
