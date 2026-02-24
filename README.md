@@ -1,18 +1,255 @@
-# Plant-Species-Image-Classification
+[model_training_details.html](https://github.com/user-attachments/files/25507751/model_training_details.html)# Plant-Species-Image-Classification
+A. Project Overview
+The purpose of this study is to develop an image classification model capable of identifying 20 different species of ornamental and tropical plants. We collected over 5,000 plant photographs using Google Teachable Machine and trained a model to discriminate between species based on visual features such as bloom appearance, leaf shape, and color.
 
-Step 4:
-<img width="1331" height="624" alt="Screenshot 2026-02-14 151016" src="https://github.com/user-attachments/assets/e1cebf4b-04c4-4711-a9d1-7935289fe566" />
-I chose the training values (epochs, batch size, and learning rate) based on achieving a balance between accuracy, training time, and model stability.
+B. Plant Species Section 
 
-Step 5:
 
-![4b8e4a5c-0ffd-4191-9d9f-d1bd5f6ed437 (1)](https://github.com/user-attachments/assets/5c7bed6f-d79b-439e-89c8-6e571e4b69ef)
+c
 
-Step 6:
- 10 screenshots showing: 
-○ Input image 
-○ Predicted plant class 
-○ Confidence score 
+
+[Uplo<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Model Training Details</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: linear-gradient(135deg, #f5f0e8 0%, #e8f0e8 50%, #f0e8f5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .header .label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.4rem;
+    }
+
+    .header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: #2c4a2e;
+      margin-bottom: 0.5rem;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #4a7c59, #8b4f8b);
+      margin: 0.8rem auto 0;
+      border-radius: 2px;
+    }
+
+    .table-wrapper {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead tr {
+      background: linear-gradient(135deg, #2c4a2e, #3d6b40);
+    }
+
+    thead th {
+      padding: 1.1rem 1.5rem;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+
+    thead th:last-child {
+      text-align: right;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f0f0f0;
+      transition: background 0.15s ease;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #f7fbf7;
+    }
+
+    tbody td {
+      padding: 1.1rem 1.5rem;
+      vertical-align: middle;
+    }
+
+    .param-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      margin-right: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .param-cell {
+      display: flex;
+      align-items: center;
+    }
+
+    .param-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #2c3e2d;
+      display: block;
+      line-height: 1.2;
+    }
+
+    .param-sub {
+      font-size: 0.75rem;
+      color: #aaa;
+      font-weight: 400;
+      margin-top: 1px;
+      display: block;
+    }
+
+    .value-cell {
+      text-align: right;
+    }
+
+    .value-badge {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: white;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 1.2rem;
+      font-size: 0.78rem;
+      color: #aaa;
+      letter-spacing: 0.04em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <p class="label">Section C</p>
+      <h2>Model Training Details</h2>
+      <div class="divider"></div>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th style="text-align:right;">Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="param-cell">
+                <div class="param-icon" style="background:#e8f5e9;">🔄</div>
+                <div>
+                  <span class="param-name">Epochs</span>
+                  <span class="param-sub">Total training iterations over the dataset</span>
+                </div>
+              </div>
+            </td>
+            <td class="value-cell">
+              <span class="value-badge" style="background: linear-gradient(135deg,#4a7c59,#2e7d32);">100</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param-cell">
+                <div class="param-icon" style="background:#e8eaf6;">📦</div>
+                <div>
+                  <span class="param-name">Batch Size</span>
+                  <span class="param-sub">Number of samples per gradient update</span>
+                </div>
+              </div>
+            </td>
+            <td class="value-cell">
+              <span class="value-badge" style="background: linear-gradient(135deg,#5c6bc0,#3949ab);">16</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param-cell">
+                <div class="param-icon" style="background:#fff3e0;">📈</div>
+                <div>
+                  <span class="param-name">Learning Rate</span>
+                  <span class="param-sub">Step size for optimizer weight updates</span>
+                </div>
+              </div>
+            </td>
+            <td class="value-cell">
+              <span class="value-badge" style="background: linear-gradient(135deg,#e67e22,#d35400);">0.001</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="param-cell">
+                <div class="param-icon" style="background:#fce4ec;">🖼️</div>
+                <div>
+                  <span class="param-name">Images per Class</span>
+                  <span class="param-sub">Number of training images per plant species</span>
+                </div>
+              </div>
+            </td>
+            <td class="value-cell">
+              <span class="value-badge" style="background: linear-gradient(135deg,#c0392b,#96281b);">250</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="footer-note">Training configuration used for plant species classification model</p>
+  </div>
+</body>
+</html>
+ading model_training_details.html…]()
+
 1<img width="918" height="608" alt="Screenshot 2026-02-14 125121" src="https://github.com/user-attachments/assets/861edeb7-f550-48f2-9b46-0bebd5216220" />
 2<img width="920" height="600" alt="Screenshot 2026-02-14 124245" src="https://github.com/user-attachments/assets/95b24594-8b00-453e-a1b4-f4731917f4de" />
 3<img width="921" height="607" alt="Screenshot 2026-02-14 130027" src="https://github.com/user-attachments/assets/2e591369-139a-4e34-88b5-46b81190e442" />4
@@ -24,21 +261,8 @@ Step 6:
 9<img width="615" height="626" alt="Screenshot 2026-02-14 142527" src="https://github.com/user-attachments/assets/6bd2913e-c2e9-463b-8c49-f6a5bbf0bdd2" />
 10<img width="813" height="614" alt="Screenshot 2026-02-14 140754" src="https://github.com/user-attachments/assets/222f0952-463c-4407-b171-47011357553d" />
 
-Step 7:
-https://drive.google.com/file/d/1sWOI2jgdABgQnBQsE2P-sq0WIeBYgfDM/view?usp=drive_link
 
-Step 8:
-https://github.com/jomocariel/Plant-Species-Image-Classification/edit/main/README.md
 
-Step 9:
-![S95cfd10fb56c4122b73260ac4c58266fy jpg_720x720q80](https://github.com/user-attachments/assets/d07db868-eed9-42ac-b4cf-3ceaffb26604)
-
-Common Name:
--Tsaang Gubat
-Scientific Name:
-Ehretia microphylla (also known as Carmona retusa)
-Description of the Plant Species:
-Tsaang Gubat is a small, bushy shrub commonly found in the Philippines. It usually grows about 1 to 4 meters tall. The plant has small, oval-shaped leaves with a rough surface and slightly toothed edges. Its leaves are dark green and grow densely along the branches. The plant produces small white flowers and round fruits that turn orange to red when ripe. It is commonly grown in gardens and sometimes found in open grasslands or forest areas.Tsaang Gubat is widely known in traditional herbal medicine. Its leaves are often used to make herbal tea and are believed to help with stomachache and diarrhea.
 
 Step 10:
 1. How did the number of images per class affect your model’s accuracy?
@@ -56,7 +280,3 @@ A reduced learning rate makes the training slower but more precise. If the learn
    
 5. If you were to improve your model, what specific changes would you make and why?
    -If I were to improve the model, I would collect additional photographs for each class to create a more balanced dataset. I'd also try to snap photographs in better lighting and with a plain background to eliminate noise. I would explore more thoroughly with training parameters such as epochs and learning rate to find the ideal combination. Finally, I would include additional diverse photos, such as different angles and sizes of leaves, to help the model generalize more effectively in real-world scenarios.
-
-https://drive.google.com/file/d/1sWOI2jgdABgQnBQsE2P-sq0WIeBYgfDM/view?usp=drive_link
-https://docs.google.com/spreadsheets/d/12T8bL8PXUJrgRlMW2doi9uiwOk98yH4tv2CZe0qb93g/edit?usp=drive_link
-https://drive.google.com/drive/folders/1HNZBT6ZcQew-YIAwfMTWImTlxajKqxHN?usp=sharing
