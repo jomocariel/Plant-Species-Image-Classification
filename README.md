@@ -4,8 +4,43 @@ A. Project Overview
 The purpose of this study is to develop an image classification model capable of identifying 20 different species of ornamental and tropical plants. We collected over 5,000 plant photographs using Google Teachable Machine and trained a model to discriminate between species based on visual features such as bloom appearance, leaf shape, and color.
 
 B. Plant Species Section 
+
 1.ELEUSINE INDICA
+
 ![1](https://github.com/user-attachments/assets/be1c3297-cd15-447f-8045-4248f26386f1)
+Common Name: Goose Grass / Indian Goosegrass / Yard Grass
+Scientific Name: Eleusine indica (L.) Gaertn.
+Description: A tufted annual grass growing up to 60 cm tall, native to tropical Asia but now a cosmopolitan weed found in lawns, roadsides, and disturbed soils. It has flat, smooth, linear leaf blades and produces distinctive finger-like seed spikes arranged in a whorl at the stem tip. Traditionally used in folk medicine to treat fever, hypertension, urinary tract infections, and as a diuretic
+
+2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 c
